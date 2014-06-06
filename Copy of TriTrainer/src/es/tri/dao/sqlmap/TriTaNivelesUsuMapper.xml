@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="es.tri.dao.TriTaNivelesUsuMapper" >
+  <resultMap id="BaseResultMap" type="es.tri.dao.model.TriTaNivelesUsu" >
+    <id column="id_nivel" property="id_nivel" jdbcType="INTEGER" />
+    <result column="Descripcion" property="descripcion" jdbcType="VARCHAR" />
+    <result column="Fecha_baja" property="fecha_baja" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id_nivel, Descripcion, Fecha_baja
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="es.tri.dao.model.TriTaNivelesUsuExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from tri_ta_niveles_usu
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from tri_ta_niveles_usu
+    where id_nivel = #{id_nivel,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tri_ta_niveles_usu
+    where id_nivel = #{id_nivel,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="es.tri.dao.model.TriTaNivelesUsu" >
+    insert into tri_ta_niveles_usu (id_nivel, Descripcion, Fecha_baja
+      )
+    values (#{id_nivel,jdbcType=INTEGER}, #{descripcion,jdbcType=VARCHAR}, #{fecha_baja,jdbcType=DATE}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="es.tri.dao.model.TriTaNivelesUsu" >
+    insert into tri_ta_niveles_usu
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id_nivel != null" >
+        id_nivel,
+      </if>
+      <if test="descripcion != null" >
+        Descripcion,
+      </if>
+      <if test="fecha_baja != null" >
+        Fecha_baja,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id_nivel != null" >
+        #{id_nivel,jdbcType=INTEGER},
+      </if>
+      <if test="descripcion != null" >
+        #{descripcion,jdbcType=VARCHAR},
+      </if>
+      <if test="fecha_baja != null" >
+        #{fecha_baja,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tri_ta_niveles_usu
+    <set >
+      <if test="record.id_nivel != null" >
+        id_nivel = #{record.id_nivel,jdbcType=INTEGER},
+      </if>
+      <if test="record.descripcion != null" >
+        Descripcion = #{record.descripcion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fecha_baja != null" >
+        Fecha_baja = #{record.fecha_baja,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tri_ta_niveles_usu
+    set id_nivel = #{record.id_nivel,jdbcType=INTEGER},
+      Descripcion = #{record.descripcion,jdbcType=VARCHAR},
+      Fecha_baja = #{record.fecha_baja,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="es.tri.dao.model.TriTaNivelesUsu" >
+    update tri_ta_niveles_usu
+    <set >
+      <if test="descripcion != null" >
+        Descripcion = #{descripcion,jdbcType=VARCHAR},
+      </if>
+      <if test="fecha_baja != null" >
+        Fecha_baja = #{fecha_baja,jdbcType=DATE},
+      </if>
+    </set>
+    where id_nivel = #{id_nivel,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="es.tri.dao.model.TriTaNivelesUsu" >
+    update tri_ta_niveles_usu
+    set Descripcion = #{descripcion,jdbcType=VARCHAR},
+      Fecha_baja = #{fecha_baja,jdbcType=DATE}
+    where id_nivel = #{id_nivel,jdbcType=INTEGER}
+  </update>
+</mapper>

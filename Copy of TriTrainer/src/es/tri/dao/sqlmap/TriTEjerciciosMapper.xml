@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="es.tri.dao.TriTEjerciciosMapper" >
+  <resultMap id="BaseResultMap" type="es.tri.dao.model.TriTEjercicios" >
+    <id column="id_ejercicio" property="id_ejercicio" jdbcType="INTEGER" />
+    <result column="Descripcion" property="descripcion" jdbcType="VARCHAR" />
+    <result column="url_video" property="url_video" jdbcType="VARCHAR" />
+    <result column="fecha_baha" property="fecha_baha" jdbcType="DATE" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id_ejercicio, Descripcion, url_video, fecha_baha
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="es.tri.dao.model.TriTEjerciciosExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from tri_t_ejercicios
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from tri_t_ejercicios
+    where id_ejercicio = #{id_ejercicio,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tri_t_ejercicios
+    where id_ejercicio = #{id_ejercicio,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="es.tri.dao.model.TriTEjercicios" >
+    insert into tri_t_ejercicios (id_ejercicio, Descripcion, url_video, 
+      fecha_baha)
+    values (#{id_ejercicio,jdbcType=INTEGER}, #{descripcion,jdbcType=VARCHAR}, #{url_video,jdbcType=VARCHAR}, 
+      #{fecha_baha,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="es.tri.dao.model.TriTEjercicios" >
+    insert into tri_t_ejercicios
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id_ejercicio != null" >
+        id_ejercicio,
+      </if>
+      <if test="descripcion != null" >
+        Descripcion,
+      </if>
+      <if test="url_video != null" >
+        url_video,
+      </if>
+      <if test="fecha_baha != null" >
+        fecha_baha,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id_ejercicio != null" >
+        #{id_ejercicio,jdbcType=INTEGER},
+      </if>
+      <if test="descripcion != null" >
+        #{descripcion,jdbcType=VARCHAR},
+      </if>
+      <if test="url_video != null" >
+        #{url_video,jdbcType=VARCHAR},
+      </if>
+      <if test="fecha_baha != null" >
+        #{fecha_baha,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tri_t_ejercicios
+    <set >
+      <if test="record.id_ejercicio != null" >
+        id_ejercicio = #{record.id_ejercicio,jdbcType=INTEGER},
+      </if>
+      <if test="record.descripcion != null" >
+        Descripcion = #{record.descripcion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.url_video != null" >
+        url_video = #{record.url_video,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fecha_baha != null" >
+        fecha_baha = #{record.fecha_baha,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tri_t_ejercicios
+    set id_ejercicio = #{record.id_ejercicio,jdbcType=INTEGER},
+      Descripcion = #{record.descripcion,jdbcType=VARCHAR},
+      url_video = #{record.url_video,jdbcType=VARCHAR},
+      fecha_baha = #{record.fecha_baha,jdbcType=DATE}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="es.tri.dao.model.TriTEjercicios" >
+    update tri_t_ejercicios
+    <set >
+      <if test="descripcion != null" >
+        Descripcion = #{descripcion,jdbcType=VARCHAR},
+      </if>
+      <if test="url_video != null" >
+        url_video = #{url_video,jdbcType=VARCHAR},
+      </if>
+      <if test="fecha_baha != null" >
+        fecha_baha = #{fecha_baha,jdbcType=DATE},
+      </if>
+    </set>
+    where id_ejercicio = #{id_ejercicio,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="es.tri.dao.model.TriTEjercicios" >
+    update tri_t_ejercicios
+    set Descripcion = #{descripcion,jdbcType=VARCHAR},
+      url_video = #{url_video,jdbcType=VARCHAR},
+      fecha_baha = #{fecha_baha,jdbcType=DATE}
+    where id_ejercicio = #{id_ejercicio,jdbcType=INTEGER}
+  </update>
+</mapper>

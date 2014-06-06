@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+ 
+<struts>
+    <constant name="struts.enable.DynamicMethodInvocation"
+        value="false" />
+    <constant name="struts.devMode" value="false" />
+    <constant name="struts.custom.i18n.resources"
+        value="ApplicationResources" />
+ 
+    <package name="default" extends="struts-default" namespace="/">
+        <action name="login"
+            class="es.tri.action.LoginAction">
+            <result name="success">/jsp/SuccessCustomer.jsp</result>
+            <result name="error">/jsp/Login.jsp</result>
+        </action>
+        
+        <action name="registro"
+            class="es.tri.action.RegistroAction">
+            <result name="success">/jsp/SuccessCustomer.jsp</result> 
+                      
+            <result name="input">/jsp/Registro.jsp</result>
+            <result name="error">/jsp/Registro.jsp</result>
+        </action>
+        
+        <action name="urlTagAction" 
+		class="es.tri.action.URLTagAction" >
+		<result name="success">jsp/SuccessCustomer.jsp</result>
+	</action>
+    </package>
+</struts>

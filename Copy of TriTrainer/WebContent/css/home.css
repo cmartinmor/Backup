@@ -1,0 +1,903 @@
+
+/*ZONA DEL CARRUSEL*/
+
+
+div#zonacarrusel h2{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 600px;
+	font-family: 'helvetica';
+	font-size: 40px;
+	color: #fff;
+	letter-spacing: 1px;
+	position: absolute;
+	top: 93px;
+	left:34%;
+	text-shadow: 1px 1px #333;
+	font-weight: bold;
+}
+
+div#zonacarrusel h3{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 600px;
+	font-family: 'helvetica';
+	font-size: 18px;
+	color: #fff;
+	position: absolute;
+	top: 140px;
+	left:34%;
+	text-shadow: 1px 1px #333;
+
+}
+
+div#zonacarrusel div#numusers{
+top: 460px;
+left: 0;
+width: 100%;
+background: #000 0.3%;
+display: inline;
+position: absolute;
+text-align: center;
+padding: 12px 0;
+opacity: 0.5;
+color: white;
+text-transform: uppercase;
+}
+
+
+div#zonacarrusel a#bono{
+	background: url(../images/bono.png) 0 0 no-repeat;
+	clear: left;
+	float: left;
+	display: inline;
+	width: 175px;
+	height: 199px;
+	position: absolute;
+	top: 50px;
+	left:13%;
+}
+
+div#carrusel_tit {
+	width: 980px;
+}
+
+div a#autor {
+	position: absolute;
+	top: 425px;
+	left: 50px;
+}
+
+/*ZONA DEL CARRUSEL*/
+
+/*CUERPO*/
+
+
+
+
+div#fondoGrisHome{
+	background: #fff;
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	padding: 15px 0 50px 0;
+}
+
+div#fondoGrisHome a{
+	font-size: 18px;
+	font-weight: normal;
+}
+
+div#grisHome{
+	display: block;
+	width: 985px;
+	margin: 0 auto;
+	position: relative;
+}
+
+div#grisHome h5{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 645px;
+	margin: 20px 0 0 45px;
+	font-family: 'helvetica';
+	font-size: 40px;
+	font-weight: bold;
+	line-height: 40px;
+}
+
+div#grisHome h5 span, div#empresas h5 span{
+	font-weight: normal;
+	font-size: 35px;
+}
+
+
+div#grisHome h6{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 900px;
+	margin: 15px 0 18px 45px;
+	font-family: 'helvetica';
+	font-size: 16px;
+	font-weight: normal;
+}
+
+div#grisHome ul{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 645px;
+	margin: 10px 0 0 45px;
+	font-family: 'helvetica';
+	font-size: 17px;
+}
+
+div#grisHome ul li{
+	float: left;
+	display: inline;
+	margin-top: 5px;
+	padding: 3px 0 7px 0;
+	font-family: 'helvetica';
+	font-size: 17px;
+}
+
+div#grisHome ul li{
+	background: url(../images/okVerde.png) 0 0 no-repeat;
+	padding-left: 20px;
+	width: 280px;
+}
+
+div#grisHome ul li.elenlace{
+	background: none;
+	padding: 0;
+}
+
+div#grisHome a.masinfo{
+	clear: left;
+	float: left;
+	display: inline;
+	width: auto;
+	margin: 0 40px 0 20px;
+	font-family: 'helvetica';
+	font-size: 18px;
+	white-space: nowrap;
+}
+
+div#grisHome a.contratacion{
+	clear: left;
+	float: left;
+	display: inline;
+	width: auto;
+	margin: 12px 0 18px 45px;
+}
+
+div#grisHome a.masinfo{
+	color: #77b636;
+}
+
+div#grisHome img#bannerFecha{
+	clear: left;
+	float: left;
+	display: inline;
+	position: absolute;
+	right: 70px;
+	top: 206px;
+}
+
+div#grisHome p#pruebaBasic{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	height: auto;
+	margin: 20px 0;
+	font-family: 'helvetica';
+	text-align: center;
+}
+
+div#grisHome p#pruebaBasic a{
+	color: #1d75bf;
+	text-decoration: none;
+}
+
+
+/*EMPRESAS*/
+
+div#empresas{
+	background: #386fc9;
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	padding: 15px 0 0px 0;
+	color: #9fc1f9;
+}
+
+div#empresascont{
+	display: block;
+	width: 985px;
+	margin: 0 auto;
+	position: relative;
+}
+
+div#empresas h5{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 645px;
+	margin: 20px 0 0 45px;
+	font-family: 'helvetica';
+	font-size: 40px;
+	font-weight: bold;
+}
+
+
+div#empresas p{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 430px;
+	margin: 30px 0 18px 45px;
+	font-family: 'helvetica';
+	font-size: 16px;
+}
+
+div#empresas img {
+	float: right;
+}
+
+div#empresas a {
+	color: #fff;
+	display: block;
+	margin-top: 25px;
+	font-size: 18px;
+}
+
+
+/*GRIS*/
+div#cuerpo h6 strong{
+	font-family: 'helvetica';
+	font-weight: normal;
+}
+
+div#cuerpo div#contenidoContratar{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 930px;
+	margin: 0 0 0 16px;
+	padding: 10px;
+	border:1px solid #7f9cca;
+}
+
+div#cuerpo div#contenidoContratar div#contrataruno{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 507px;
+	margin: 0;
+}
+
+div#cuerpo div#contenidoContratar div#contratardos{
+	float: left;
+	display: inline;
+	width: 387px;
+	margin: 0 0 0 32px;
+}
+
+div#cuerpo div#contenidoContratar h4{
+	background: #4984c0;
+	clear: left;
+	float: left;
+	display: inline;
+	padding: 11px 10px 9px 10px;
+	font-family: 'helvetica';
+	font-size: 18px;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+div#cuerpo div#contenidoContratar div#contrataruno h4{
+	width: 487px;
+}
+
+div#cuerpo div#contenidoContratar div#contratardos h4{
+	width: 367px;
+}
+
+div#cuerpo div#contenidoContratar h6{
+	clear: left;
+	float: left;
+	display: inline;
+	width: auto;
+	margin-top: 12px;
+	font-family: 'helvetica';
+	font-size: 47px;
+	color: #2c3036;
+	white-space: nowrap;
+}
+
+div#cuerpo div#contenidoContratar h6 span{
+	font-family: 'helvetica';
+	font-size: 22px;
+}
+
+div#cuerpo div#contenidoContratar a.contratacion{
+	float: right;
+	display: inline;
+	width: 211px;
+	margin-top: 20px;
+	padding: 10px 0 8px 0;
+	font-family: 'helvetica';
+	font-size: 17px;
+	color: #fff;
+	text-align: center;
+}
+
+div#cuerpo div#contenidoContratar div#contrataruno a.contratacion{
+	background: #77b636;
+}
+
+div#cuerpo div#contenidoContratar div#contratardos a.contratacion{
+	background: #e88e19;
+}
+
+
+div#cuerpo div#contenidoContratar p{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	height: 50px;
+	margin-top: 10px;
+	font-family: 'helvetica';
+}
+
+div#cuerpo div#contenidoContratar ul{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin-top: 10px;
+	font-family: 'helvetica';
+}
+
+div#cuerpo div#contenidoContratar ul li{
+	clear: left;
+	float: left;
+	display: inline;
+	margin-top: 5px;
+	padding: 3px 0 7px 0;
+}
+
+div#cuerpo div#contenidoContratar div#contrataruno ul li{
+	background: url(../images/okVerde.png) 0 0 no-repeat;
+	padding-left: 20px;
+	width: 487px;
+}
+
+div#cuerpo div#contenidoContratar div#contratardos ul li{
+	background: url(../images/okNaranja.png) 0 0 no-repeat;
+	padding-left: 20px;
+	width: 367px;
+}
+
+div#cuerpo div#contenidoContratar ul li.novisible{
+	visibility: hidden;
+}
+
+div#cuerpo div#contenidoContratar a.masinfo{
+	clear: left;
+	float: right;
+	display: inline;
+	width: auto;
+	margin: 12px 40px 0 0;
+	font-family: 'helvetica';
+	font-size: 18px;
+	white-space: nowrap;
+}
+
+div#cuerpo div#contenidoContratar div#contrataruno a.masinfo{
+	color: #77b636;
+}
+
+div#cuerpo div#contenidoContratar div#contratardos a.masinfo{
+	color: #e88e19;
+}
+
+div#cuerpo div#contenidoContratar p#pruebaBasic{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+	font-family: 'helvetica';
+}
+
+div#cuerpo div#contenidoContratar p#pruebaBasic a{
+	color: #5f83bd;
+	text-decoration: underline;
+}
+
+div#cuerpo h2{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin-top: 40px;
+	font-family: 'helvetica';
+	font-size: 25px;
+	text-align: center;
+}
+
+div#cuerpo h2 strong{
+	display: block;
+	font-size: 40px;
+}
+
+
+
+div#cuerpo div#cuerpoExperiencia{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 94px 0 0 0;
+}
+
+div#cuerpo div#cuerpoExperiencia img{
+	clear: left;
+	float: left;
+	margin: 0 30px 0 0;
+}
+
+
+div#cuerpo div#cuerpoExperiencia div#lasexperiencias{
+	float: left;
+	display: inline;
+	width: 465px;
+	margin: 0 30px 0 0;
+}
+
+div#cuerpo div#cuerpoExperiencia div#lasexperiencias h2{
+	clear: left
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 0;
+	text-align: left;
+	font-family: 'helvetica';
+	font-size: 30px;
+	font-weight: normal;
+}
+
+div#cuerpo div#cuerpoExperiencia div#lasexperiencias p{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 30px 0;
+	text-align: left;
+	font-family: 'helvetica';
+	font-size: 18px;
+}
+
+
+div#cuerpo div#cuerpoExperiencia div#lasexperiencias a{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 0;
+	text-align: left;
+	font-family: 'helvetica';
+	font-size: 18px;
+	font-weight: normal;
+	color: #1d75bf;
+}
+
+/*CUERPO*/
+
+
+/*CARRUSEL*/
+
+.jcarousel-clip{
+	width: 981px;
+	position: relative;
+	overflow: hidden;
+}
+ 
+.jcarousel-clip li{
+	width: 981px;
+	float: left;
+	position: relative;
+}
+ 
+.jcarousel-clip li img{
+	width: 981px;
+}
+#wrap{
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+	position: relative;
+
+}
+
+#wrap img{
+	min-width: 100%;
+}
+ 
+#prev, #forw{
+	background: #000;
+	text-align: center;
+	width: 20px;
+	color: #fff;
+	text-decoration: none;
+	font-size: 25px;
+	font-family: arial, sans-serif;
+	display: block;
+}
+#prev{
+	background: url(../images/prev.png) 0 0 no-repeat;
+	position: absolute;
+	z-index: 10;
+	top: 218px;
+	left: 17px;
+	padding: 40px 20px 30px 20px;
+}
+ 
+#forw{
+	background: url(../images/next.png) 40px 0 no-repeat;
+	position: absolute;
+	z-index: 10;
+	right: 17px;
+	top: 218px;
+	padding: 40px 40px 30px 0;
+}
+
+
+#prev span, #forw span{
+	position: absolute;
+	top: -10000px;
+	left: 0;
+}
+
+div#fondoVideoconfefencia{
+	background: #fff;
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	border-bottom: 1px solid #5f83bd;
+}
+
+div#Videoconfefencia{
+	display: block;
+	width: 985px;
+	margin: 0 auto;
+	position: relative;
+	height: 195px;
+}
+
+div#fondoVideoconfefencia div#videoIz{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 664px;
+	border-right: 1px solid #5f83bd;
+}
+
+div#fondoVideoconfefencia div#videoDe{
+	float: left;
+	display: inline;
+	width: 315px;
+}
+
+
+div#Videoconfefencia h5{
+	clear: left;
+	float: left;
+	display: inline;
+	font-family: 'helvetica';
+	font-size: 40px;
+	white-space: nowrap;
+}
+
+div#fondoVideoconfefencia div#videoIz h5{
+	margin: 26px 0 0 54px;
+}
+
+div#fondoVideoconfefencia div#videoDe h5{
+	margin: 26px 0 0 31px;
+}
+
+
+div#Videoconfefencia p{
+	clear: left;
+	float: left;
+	display: inline;
+	margin: 0;
+	font-size: 20px;
+}
+
+div#fondoVideoconfefencia div#videoIz p{
+	width: 510px;
+	margin: 0px 0 0 54px;
+}
+
+div#fondoVideoconfefencia div#videoDe p{
+	width: 280px;
+	margin: 0px 0 0 30px;
+}
+
+
+div#fondoVideoconfefencia div#videoIz p a{
+	font-family: 'helvetica';
+	font-weight: normal;
+	color: #ec8826;
+}
+
+
+div#fondoVideoconfefencia div#videoDe p a{
+	font-family: 'helvetica';
+	font-weight: normal;
+	color: #5f83bd;
+}
+
+
+div#fondoVideoconfefencia div#videoIz a#homecontrataavant{
+	clear: left;
+	float: left;
+	display: inline;
+	margin: 15px 0 0 45px;
+}
+
+
+div#fondoVideoconfefencia div#videoDe a#homeconsulta{
+	clear: left;
+	float: left;
+	display: inline;
+	margin: 25px 0 20px 30px;
+}
+
+div#Videoconfefencia ul{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 610px;
+	margin: 25px 0 15px 45px;
+	font-family: 'helvetica';
+	font-size: 17px;
+}
+
+div#Videoconfefencia ul li{
+	background: url(../images/okVerde.png) 0 0 no-repeat;
+	float: left;
+	display: inline;
+	width: 220px;
+	margin-top: 5px;
+	padding: 3px 0 7px 20px;
+	font-family: 'helvetica';
+	font-size: 17px;
+}
+
+div#Videoconfefencia ul li.licambiada{
+	width: 340px;
+}
+
+div#Videoconfefencia ul li.elenlace{
+	background: none;
+	padding: 0;
+}
+
+div#Videoconfefencia a.masinfo{
+	clear: left;
+	float: left;
+	display: inline;
+	width: auto;
+	margin: 0 40px 0 20px;
+	font-family: 'helvetica';
+	font-size: 18px;
+	white-space: nowrap;
+}
+
+
+
+div#fondoLaprensa{
+	background: #fff;
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	border-bottom: 1px solid #5f83bd;
+}
+
+div#laPrensa{
+	display: block;
+	width: 985px;
+	margin: 0 auto;
+	position: relative;
+}
+
+div#laPrensa p{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 30px 0 10px 0;
+	font-size: 14px;
+}
+
+div#laPrensa p span{
+	color: #999;
+}
+
+div#laPrensa img{
+	clear: left;
+	float: left;
+	display: inline;
+	margin: 0 0 25px 40px;
+}
+
+
+div#fondoChat{
+	background: #fff;
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+}
+
+div#elChat{
+	display: block;
+	width: 985px;
+	height: 410px;
+	margin: 0 auto;
+	position: relative;
+	border-bottom: 1px solid #eeeeee;
+}
+
+div#contenedorHablamos{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 500px;
+	margin: 80px 0 0 40px;
+}
+
+div#contenedorHablamos h2{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 0;
+	font-family: 'helvetica';
+	font-size: 60px;
+	text-transform: uppercase;
+}
+
+div#contenedorHablamos ul{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 0 0 10px 0;
+	font-size: 16px;
+}
+
+div#contenedorHablamos ul li{
+	background: url("../images/okVerde.png") no-repeat scroll 0 0 transparent;
+	clear: left;
+	float: left;
+	display: inline;
+    width: 450px;
+	margin: 10px 0 0 0;
+	padding-left: 20px;
+	font-size: 16px;
+}
+
+div#contenedorHablamos p{
+	clear: left;
+	float: left;
+	display: inline;
+	margin: 10px 0 0 20px;
+    width: 400px;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+div#contenedorHablamos h3{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 30px 0 0 0;
+	font-family: 'helvetica';
+	font-size: 30px;
+}
+
+
+div#elChat img{
+	float: left;
+	display: inline;
+	margin: 75px 0 25px 10px;
+}
+
+div#restoChat{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 0 0 60px 0;
+}
+
+div#restoChat h4{
+	background: url(../images/rayasempresa.jpg) center 14px no-repeat;
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	font-family: 'helvetica';
+	font-size: 30px;
+	text-transform: uppercase;
+	font-weight: normal;
+	text-align: center;
+}
+
+div#restoChat h4 span{
+	color: #01aef0;
+}
+
+div#restoChat p{
+	clear: left;
+	float: left;
+	display: inline;
+	width: 100%;
+	margin: 20px 0 60px 0;
+	font-size: 24px;
+	font-weight: normal;
+}
+
+div#restoChat img{
+	clear: left;
+	float: left;
+	display: inline;
+	margin: 0;
+}
+
+div#restoChat ul{
+	float: left;
+	display: inline;
+	margin: 0;
+	width:657px;
+	font-size: 14px;
+}
+
+div#restoChat ul li{
+	background: url(../images/bulletChat.gif) 0 0 no-repeat;
+	float: left;
+	display: inline;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 20px;
+	width:657px;
+}
+
+div#restoChat ul li#tit{
+	background: none;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+span.sinnegrita{
+	font-weight: normal;
+	font-family: 'helvetica';
+}

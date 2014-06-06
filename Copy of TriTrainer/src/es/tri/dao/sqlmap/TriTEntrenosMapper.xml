@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="es.tri.dao.TriTEntrenosMapper" >
+  <resultMap id="BaseResultMap" type="es.tri.dao.model.TriTEntrenos" >
+    <id column="id_entreno_ejercicio" property="id_entreno_ejercicio" jdbcType="INTEGER" />
+    <result column="id_entreno" property="id_entreno" jdbcType="INTEGER" />
+    <result column="id_ejercicio" property="id_ejercicio" jdbcType="INTEGER" />
+    <result column="fecha_baja" property="fecha_baja" jdbcType="INTEGER" />
+    <result column="valoracion" property="valoracion" jdbcType="INTEGER" />
+    <result column="pulsaciones" property="pulsaciones" jdbcType="INTEGER" />
+    <result column="conseguido" property="conseguido" jdbcType="INTEGER" />
+    <result column="tiempo" property="tiempo" jdbcType="TIME" />
+    <result column="intensidad" property="intensidad" jdbcType="INTEGER" />
+    <result column="distancia" property="distancia" jdbcType="INTEGER" />
+    <result column="series" property="series" jdbcType="INTEGER" />
+    <result column="repeticiones" property="repeticiones" jdbcType="INTEGER" />
+    <result column="descanso" property="descanso" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id_entreno_ejercicio, id_entreno, id_ejercicio, fecha_baja, valoracion, pulsaciones, 
+    conseguido, tiempo, intensidad, distancia, series, repeticiones, descanso
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="es.tri.dao.model.TriTEntrenosExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from tri_t_entrenos
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from tri_t_entrenos
+    where id_entreno_ejercicio = #{id_entreno_ejercicio,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from tri_t_entrenos
+    where id_entreno_ejercicio = #{id_entreno_ejercicio,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="es.tri.dao.model.TriTEntrenos" >
+    insert into tri_t_entrenos (id_entreno_ejercicio, id_entreno, 
+      id_ejercicio, fecha_baja, valoracion, 
+      pulsaciones, conseguido, tiempo, 
+      intensidad, distancia, series, 
+      repeticiones, descanso)
+    values (#{id_entreno_ejercicio,jdbcType=INTEGER}, #{id_entreno,jdbcType=INTEGER}, 
+      #{id_ejercicio,jdbcType=INTEGER}, #{fecha_baja,jdbcType=INTEGER}, #{valoracion,jdbcType=INTEGER}, 
+      #{pulsaciones,jdbcType=INTEGER}, #{conseguido,jdbcType=INTEGER}, #{tiempo,jdbcType=TIME}, 
+      #{intensidad,jdbcType=INTEGER}, #{distancia,jdbcType=INTEGER}, #{series,jdbcType=INTEGER}, 
+      #{repeticiones,jdbcType=INTEGER}, #{descanso,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="es.tri.dao.model.TriTEntrenos" >
+    insert into tri_t_entrenos
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id_entreno_ejercicio != null" >
+        id_entreno_ejercicio,
+      </if>
+      <if test="id_entreno != null" >
+        id_entreno,
+      </if>
+      <if test="id_ejercicio != null" >
+        id_ejercicio,
+      </if>
+      <if test="fecha_baja != null" >
+        fecha_baja,
+      </if>
+      <if test="valoracion != null" >
+        valoracion,
+      </if>
+      <if test="pulsaciones != null" >
+        pulsaciones,
+      </if>
+      <if test="conseguido != null" >
+        conseguido,
+      </if>
+      <if test="tiempo != null" >
+        tiempo,
+      </if>
+      <if test="intensidad != null" >
+        intensidad,
+      </if>
+      <if test="distancia != null" >
+        distancia,
+      </if>
+      <if test="series != null" >
+        series,
+      </if>
+      <if test="repeticiones != null" >
+        repeticiones,
+      </if>
+      <if test="descanso != null" >
+        descanso,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id_entreno_ejercicio != null" >
+        #{id_entreno_ejercicio,jdbcType=INTEGER},
+      </if>
+      <if test="id_entreno != null" >
+        #{id_entreno,jdbcType=INTEGER},
+      </if>
+      <if test="id_ejercicio != null" >
+        #{id_ejercicio,jdbcType=INTEGER},
+      </if>
+      <if test="fecha_baja != null" >
+        #{fecha_baja,jdbcType=INTEGER},
+      </if>
+      <if test="valoracion != null" >
+        #{valoracion,jdbcType=INTEGER},
+      </if>
+      <if test="pulsaciones != null" >
+        #{pulsaciones,jdbcType=INTEGER},
+      </if>
+      <if test="conseguido != null" >
+        #{conseguido,jdbcType=INTEGER},
+      </if>
+      <if test="tiempo != null" >
+        #{tiempo,jdbcType=TIME},
+      </if>
+      <if test="intensidad != null" >
+        #{intensidad,jdbcType=INTEGER},
+      </if>
+      <if test="distancia != null" >
+        #{distancia,jdbcType=INTEGER},
+      </if>
+      <if test="series != null" >
+        #{series,jdbcType=INTEGER},
+      </if>
+      <if test="repeticiones != null" >
+        #{repeticiones,jdbcType=INTEGER},
+      </if>
+      <if test="descanso != null" >
+        #{descanso,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tri_t_entrenos
+    <set >
+      <if test="record.id_entreno_ejercicio != null" >
+        id_entreno_ejercicio = #{record.id_entreno_ejercicio,jdbcType=INTEGER},
+      </if>
+      <if test="record.id_entreno != null" >
+        id_entreno = #{record.id_entreno,jdbcType=INTEGER},
+      </if>
+      <if test="record.id_ejercicio != null" >
+        id_ejercicio = #{record.id_ejercicio,jdbcType=INTEGER},
+      </if>
+      <if test="record.fecha_baja != null" >
+        fecha_baja = #{record.fecha_baja,jdbcType=INTEGER},
+      </if>
+      <if test="record.valoracion != null" >
+        valoracion = #{record.valoracion,jdbcType=INTEGER},
+      </if>
+      <if test="record.pulsaciones != null" >
+        pulsaciones = #{record.pulsaciones,jdbcType=INTEGER},
+      </if>
+      <if test="record.conseguido != null" >
+        conseguido = #{record.conseguido,jdbcType=INTEGER},
+      </if>
+      <if test="record.tiempo != null" >
+        tiempo = #{record.tiempo,jdbcType=TIME},
+      </if>
+      <if test="record.intensidad != null" >
+        intensidad = #{record.intensidad,jdbcType=INTEGER},
+      </if>
+      <if test="record.distancia != null" >
+        distancia = #{record.distancia,jdbcType=INTEGER},
+      </if>
+      <if test="record.series != null" >
+        series = #{record.series,jdbcType=INTEGER},
+      </if>
+      <if test="record.repeticiones != null" >
+        repeticiones = #{record.repeticiones,jdbcType=INTEGER},
+      </if>
+      <if test="record.descanso != null" >
+        descanso = #{record.descanso,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tri_t_entrenos
+    set id_entreno_ejercicio = #{record.id_entreno_ejercicio,jdbcType=INTEGER},
+      id_entreno = #{record.id_entreno,jdbcType=INTEGER},
+      id_ejercicio = #{record.id_ejercicio,jdbcType=INTEGER},
+      fecha_baja = #{record.fecha_baja,jdbcType=INTEGER},
+      valoracion = #{record.valoracion,jdbcType=INTEGER},
+      pulsaciones = #{record.pulsaciones,jdbcType=INTEGER},
+      conseguido = #{record.conseguido,jdbcType=INTEGER},
+      tiempo = #{record.tiempo,jdbcType=TIME},
+      intensidad = #{record.intensidad,jdbcType=INTEGER},
+      distancia = #{record.distancia,jdbcType=INTEGER},
+      series = #{record.series,jdbcType=INTEGER},
+      repeticiones = #{record.repeticiones,jdbcType=INTEGER},
+      descanso = #{record.descanso,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="es.tri.dao.model.TriTEntrenos" >
+    update tri_t_entrenos
+    <set >
+      <if test="id_entreno != null" >
+        id_entreno = #{id_entreno,jdbcType=INTEGER},
+      </if>
+      <if test="id_ejercicio != null" >
+        id_ejercicio = #{id_ejercicio,jdbcType=INTEGER},
+      </if>
+      <if test="fecha_baja != null" >
+        fecha_baja = #{fecha_baja,jdbcType=INTEGER},
+      </if>
+      <if test="valoracion != null" >
+        valoracion = #{valoracion,jdbcType=INTEGER},
+      </if>
+      <if test="pulsaciones != null" >
+        pulsaciones = #{pulsaciones,jdbcType=INTEGER},
+      </if>
+      <if test="conseguido != null" >
+        conseguido = #{conseguido,jdbcType=INTEGER},
+      </if>
+      <if test="tiempo != null" >
+        tiempo = #{tiempo,jdbcType=TIME},
+      </if>
+      <if test="intensidad != null" >
+        intensidad = #{intensidad,jdbcType=INTEGER},
+      </if>
+      <if test="distancia != null" >
+        distancia = #{distancia,jdbcType=INTEGER},
+      </if>
+      <if test="series != null" >
+        series = #{series,jdbcType=INTEGER},
+      </if>
+      <if test="repeticiones != null" >
+        repeticiones = #{repeticiones,jdbcType=INTEGER},
+      </if>
+      <if test="descanso != null" >
+        descanso = #{descanso,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id_entreno_ejercicio = #{id_entreno_ejercicio,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="es.tri.dao.model.TriTEntrenos" >
+    update tri_t_entrenos
+    set id_entreno = #{id_entreno,jdbcType=INTEGER},
+      id_ejercicio = #{id_ejercicio,jdbcType=INTEGER},
+      fecha_baja = #{fecha_baja,jdbcType=INTEGER},
+      valoracion = #{valoracion,jdbcType=INTEGER},
+      pulsaciones = #{pulsaciones,jdbcType=INTEGER},
+      conseguido = #{conseguido,jdbcType=INTEGER},
+      tiempo = #{tiempo,jdbcType=TIME},
+      intensidad = #{intensidad,jdbcType=INTEGER},
+      distancia = #{distancia,jdbcType=INTEGER},
+      series = #{series,jdbcType=INTEGER},
+      repeticiones = #{repeticiones,jdbcType=INTEGER},
+      descanso = #{descanso,jdbcType=INTEGER}
+    where id_entreno_ejercicio = #{id_entreno_ejercicio,jdbcType=INTEGER}
+  </update>
+</mapper>
