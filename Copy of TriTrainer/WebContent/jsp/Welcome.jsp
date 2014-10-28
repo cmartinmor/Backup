@@ -14,6 +14,7 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/docs.min.css" rel="stylesheet">
+    <link href="css/fonts.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -49,18 +50,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">TriTrainer</a>
+              
+              <a class="navbar-brand" href="#"><img src="images/iconoLogo.png"> TriTrainer</a>
             </div>
              
             <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav">
+              <ul class="nav navbar-nav" style="padding-left: 10%; padding-top: 2%;">
                 <li class="active"><a href="#">Home</a></li>
                
                 <li><a href="#" class="" data-toggle="modal" data-target="#AboutModal">About</a></li>
                 <li><a href="#" class="" data-toggle="modal" data-target="#ContactModal">Contact</a></li>
 				 
               </ul>
-              <a href="jsp/Login.jsp"><button type="button" class="btn btn-success right" style="margin : 8px">Sign in</button> </a>
+              <a href="jsp/Login.jsp"><button type="button" class="btn btn-success right" style="margin : 35px">Sign in</button> </a>
             </div>
            
           </div>
@@ -225,13 +227,11 @@
 			<!-- Three columns of text below the carousel -->
 			<div class="row">
 				<div class="col-lg-4">
-					<img class="img-circle" data-src="holder.js/140x140"
-						alt="Generic placeholder image">
-					<h2>Heading</h2>
-					<p>Donec sed odio dui. Etiam porta sem malesuada magna mollis
-						euismod. Nullam id dolor id nibh ultricies vehicula ut id elit.
-						Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-						Praesent commodo cursus magna.</p>
+					<img class="img-circle" src="images/RUN140X140.jpg"
+						alt="Running">
+					<h2>Running</h2>
+					<p>Actually, I think I run for happiness. I think that life has to be cheerful, and that is what I am looking for. For me, happiness is to get in touch with nature, with the mountain, making sport. So I run for that.</p>
+					<h6>Kilian Jornet.</h6>
 					<p>
 						<a class="btn btn-default" href="#" role="button">View details
 							&raquo;</a>
@@ -239,13 +239,11 @@
 				</div>
 				<!-- /.col-lg-4 -->
 				<div class="col-lg-4">
-					<img class="img-circle" data-src="holder.js/140x140"
-						alt="Generic placeholder image">
-					<h2>Heading</h2>
-					<p>Duis mollis, est non commodo luctus, nisi erat porttitor
-						ligula, eget lacinia odio sem nec elit. Cras mattis consectetur
-						purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo,
-						tortor mauris condimentum nibh.</p>
+					<img class="img-circle" src="images/BICI140X140.jpg"
+						alt="Cycling">
+					<h2>Cycling</h2>
+					<p>In sport you always think the strongest guy should be going for it and getting the best results. The thing is, cycling also has a very important team aspect, which I don't think that a lot of people fully grasp.</p>
+					<h6>Chris Froome.</h6>
 					<p>
 						<a class="btn btn-default" href="#" role="button">View details
 							&raquo;</a>
@@ -253,13 +251,11 @@
 				</div>
 				<!-- /.col-lg-4 -->
 				<div class="col-lg-4">
-					<img class="img-circle" data-src="holder.js/140x140"
-						alt="Generic placeholder image">
-					<h2>Heading</h2>
-					<p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis
-						in, egestas eget quam. Vestibulum id ligula porta felis euismod
-						semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-						condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+					<img class="img-circle" src="images/swin140x140.jpg"
+						alt="Swiming">
+					<h2>Swiming</h2>
+					<p>I feel most at home in the water. I disappear. That's where I belong. Swimming is normal for me. I'm relaxed. I'm comfortable, and I know my surroundings. It's my home.</p>
+					<h6>Michael Phelps.</h6>
 					<p>
 						<a class="btn btn-default" href="#" role="button">View details
 							&raquo;</a>

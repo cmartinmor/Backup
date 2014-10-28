@@ -11,7 +11,13 @@ public class TriTiEntrenoUsuario {
 
     private Date fecha_baja;
 
-    private Integer valoración;
+    private Integer valoracion;
+
+    private Integer tiempoRun;
+
+    private Integer tiempoSwim;
+
+    private Integer tiempoCycle;
 
     public Integer getId_entreno() {
         return id_entreno;
@@ -45,11 +51,35 @@ public class TriTiEntrenoUsuario {
         this.fecha_baja = fecha_baja;
     }
 
-    public Integer getValoración() {
-        return valoración;
+    public Integer getValoracion() {
+        return valoracion;
     }
 
-    public void setValoración(Integer valoración) {
-        this.valoración = valoración;
+    public void setValoracion(Integer valoracion) {
+        this.valoracion = valoracion;
+    }
+
+    public Integer getTiempoRun() {
+        return tiempoRun;
+    }
+
+    public void setTiempoRun(Integer tiempoRun) {
+        this.tiempoRun = tiempoRun;
+    }
+
+    public Integer getTiempoSwim() {
+        return tiempoSwim;
+    }
+
+    public void setTiempoSwim(Integer tiempoSwim) {
+        this.tiempoSwim = tiempoSwim;
+    }
+
+    public Integer getTiempoCycle() {
+        return tiempoCycle;
+    }
+
+    public void setTiempoCycle(Integer tiempoCycle) {
+        this.tiempoCycle = tiempoCycle;
     }
 }

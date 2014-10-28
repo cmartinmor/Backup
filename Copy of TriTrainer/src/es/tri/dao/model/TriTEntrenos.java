@@ -9,7 +9,7 @@ public class TriTEntrenos {
 
     private Integer id_ejercicio;
 
-    private Integer fecha_baja;
+    private Date fecha_baja;
 
     private Integer valoracion;
 
@@ -28,6 +28,12 @@ public class TriTEntrenos {
     private Integer repeticiones;
 
     private Integer descanso;
+
+    private Date fecha;
+
+    private Integer diaSemana;
+
+    private Integer semana;
 
     public Integer getId_entreno_ejercicio() {
         return id_entreno_ejercicio;
@@ -53,11 +59,11 @@ public class TriTEntrenos {
         this.id_ejercicio = id_ejercicio;
     }
 
-    public Integer getFecha_baja() {
+    public Date getFecha_baja() {
         return fecha_baja;
     }
 
-    public void setFecha_baja(Integer fecha_baja) {
+    public void setFecha_baja(Date fecha_baja) {
         this.fecha_baja = fecha_baja;
     }
 
@@ -131,5 +137,29 @@ public class TriTEntrenos {
 
     public void setDescanso(Integer descanso) {
         this.descanso = descanso;
+    }
+
+    public Date getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
+    }
+
+    public Integer getDiaSemana() {
+        return diaSemana;
+    }
+
+    public void setDiaSemana(Integer diaSemana) {
+        this.diaSemana = diaSemana;
+    }
+
+    public Integer getSemana() {
+        return semana;
+    }
+
+    public void setSemana(Integer semana) {
+        this.semana = semana;
     }
 }

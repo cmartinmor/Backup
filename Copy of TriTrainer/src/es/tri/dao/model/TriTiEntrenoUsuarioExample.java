@@ -372,63 +372,243 @@ public class TriTiEntrenoUsuarioExample {
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónIsNull() {
-            addCriterion("Valoración is null");
+        public Criteria andValoracionIsNull() {
+            addCriterion("Valoracion is null");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónIsNotNull() {
-            addCriterion("Valoración is not null");
+        public Criteria andValoracionIsNotNull() {
+            addCriterion("Valoracion is not null");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónEqualTo(Integer value) {
-            addCriterion("Valoración =", value, "valoración");
+        public Criteria andValoracionEqualTo(Integer value) {
+            addCriterion("Valoracion =", value, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónNotEqualTo(Integer value) {
-            addCriterion("Valoración <>", value, "valoración");
+        public Criteria andValoracionNotEqualTo(Integer value) {
+            addCriterion("Valoracion <>", value, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónGreaterThan(Integer value) {
-            addCriterion("Valoración >", value, "valoración");
+        public Criteria andValoracionGreaterThan(Integer value) {
+            addCriterion("Valoracion >", value, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónGreaterThanOrEqualTo(Integer value) {
-            addCriterion("Valoración >=", value, "valoración");
+        public Criteria andValoracionGreaterThanOrEqualTo(Integer value) {
+            addCriterion("Valoracion >=", value, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónLessThan(Integer value) {
-            addCriterion("Valoración <", value, "valoración");
+        public Criteria andValoracionLessThan(Integer value) {
+            addCriterion("Valoracion <", value, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónLessThanOrEqualTo(Integer value) {
-            addCriterion("Valoración <=", value, "valoración");
+        public Criteria andValoracionLessThanOrEqualTo(Integer value) {
+            addCriterion("Valoracion <=", value, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónIn(List<Integer> values) {
-            addCriterion("Valoración in", values, "valoración");
+        public Criteria andValoracionIn(List<Integer> values) {
+            addCriterion("Valoracion in", values, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónNotIn(List<Integer> values) {
-            addCriterion("Valoración not in", values, "valoración");
+        public Criteria andValoracionNotIn(List<Integer> values) {
+            addCriterion("Valoracion not in", values, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónBetween(Integer value1, Integer value2) {
-            addCriterion("Valoración between", value1, value2, "valoración");
+        public Criteria andValoracionBetween(Integer value1, Integer value2) {
+            addCriterion("Valoracion between", value1, value2, "valoracion");
             return (Criteria) this;
         }
 
-        public Criteria andValoraciónNotBetween(Integer value1, Integer value2) {
-            addCriterion("Valoración not between", value1, value2, "valoración");
+        public Criteria andValoracionNotBetween(Integer value1, Integer value2) {
+            addCriterion("Valoracion not between", value1, value2, "valoracion");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunIsNull() {
+            addCriterion("tiempoRun is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunIsNotNull() {
+            addCriterion("tiempoRun is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunEqualTo(Integer value) {
+            addCriterion("tiempoRun =", value, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunNotEqualTo(Integer value) {
+            addCriterion("tiempoRun <>", value, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunGreaterThan(Integer value) {
+            addCriterion("tiempoRun >", value, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunGreaterThanOrEqualTo(Integer value) {
+            addCriterion("tiempoRun >=", value, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunLessThan(Integer value) {
+            addCriterion("tiempoRun <", value, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunLessThanOrEqualTo(Integer value) {
+            addCriterion("tiempoRun <=", value, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunIn(List<Integer> values) {
+            addCriterion("tiempoRun in", values, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunNotIn(List<Integer> values) {
+            addCriterion("tiempoRun not in", values, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunBetween(Integer value1, Integer value2) {
+            addCriterion("tiempoRun between", value1, value2, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoRunNotBetween(Integer value1, Integer value2) {
+            addCriterion("tiempoRun not between", value1, value2, "tiempoRun");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimIsNull() {
+            addCriterion("tiempoSwim is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimIsNotNull() {
+            addCriterion("tiempoSwim is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimEqualTo(Integer value) {
+            addCriterion("tiempoSwim =", value, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimNotEqualTo(Integer value) {
+            addCriterion("tiempoSwim <>", value, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimGreaterThan(Integer value) {
+            addCriterion("tiempoSwim >", value, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimGreaterThanOrEqualTo(Integer value) {
+            addCriterion("tiempoSwim >=", value, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimLessThan(Integer value) {
+            addCriterion("tiempoSwim <", value, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimLessThanOrEqualTo(Integer value) {
+            addCriterion("tiempoSwim <=", value, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimIn(List<Integer> values) {
+            addCriterion("tiempoSwim in", values, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimNotIn(List<Integer> values) {
+            addCriterion("tiempoSwim not in", values, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimBetween(Integer value1, Integer value2) {
+            addCriterion("tiempoSwim between", value1, value2, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoSwimNotBetween(Integer value1, Integer value2) {
+            addCriterion("tiempoSwim not between", value1, value2, "tiempoSwim");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleIsNull() {
+            addCriterion("tiempoCycle is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleIsNotNull() {
+            addCriterion("tiempoCycle is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleEqualTo(Integer value) {
+            addCriterion("tiempoCycle =", value, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleNotEqualTo(Integer value) {
+            addCriterion("tiempoCycle <>", value, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleGreaterThan(Integer value) {
+            addCriterion("tiempoCycle >", value, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleGreaterThanOrEqualTo(Integer value) {
+            addCriterion("tiempoCycle >=", value, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleLessThan(Integer value) {
+            addCriterion("tiempoCycle <", value, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleLessThanOrEqualTo(Integer value) {
+            addCriterion("tiempoCycle <=", value, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleIn(List<Integer> values) {
+            addCriterion("tiempoCycle in", values, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleNotIn(List<Integer> values) {
+            addCriterion("tiempoCycle not in", values, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleBetween(Integer value1, Integer value2) {
+            addCriterion("tiempoCycle between", value1, value2, "tiempoCycle");
+            return (Criteria) this;
+        }
+
+        public Criteria andTiempoCycleNotBetween(Integer value1, Integer value2) {
+            addCriterion("tiempoCycle not between", value1, value2, "tiempoCycle");
             return (Criteria) this;
         }
     }

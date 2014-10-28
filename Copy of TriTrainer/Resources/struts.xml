@@ -24,7 +24,13 @@
             <result name="input">/jsp/Registro.jsp</result>
             <result name="error">/jsp/Registro.jsp</result>
         </action>
-        
+        <action name="nuevo"
+            class="es.tri.action.NuevoAction">
+            <result name="success">/jsp/SuccessCustomer.jsp</result> 
+                      
+            <result name="input">/jsp/Registro.jsp</result>
+            <result name="error">/jsp/Registro.jsp</result>
+        </action>
         <action name="urlTagAction" 
 		class="es.tri.action.URLTagAction" >
 		<result name="success">jsp/SuccessCustomer.jsp</result>

@@ -1,71 +1,70 @@
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
+  <head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Le JS -->
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/ladda.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
 
+    <!-- Le styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="../css/login.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="../css/ladda.css" rel="stylesheet" type="text/css" />
 
-<title>Signin Template for Bootstrap</title>
-
-<!-- Bootstrap core CSS -->
-<link href="../css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom styles for this template -->
-<link href="../css/singnin.css" rel="stylesheet">
-
-<!-- Just for debugging purposes. Don't actually copy this line! -->
-<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-
-<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="Scripts/html5shiv.js"></script>
     <![endif]-->
-</head>
+    </head>
 
-<body>
-
-	<div class="container">
-
-		<s:actionerror />
-		<s:form action="login.action" method="post" cssClass="form-signin"
-			theme="simple">
-			<h2 class="form-signin-heading">Please sign in</h2>
-			
-				
+    <body>
+        <div class="container">
+        <s:actionerror />
+		<s:form action="login.action" method="post" theme="simple">
+        
+            <div class="form-signin">
+                <img src="../images/logo2.png">
+               <div id="form-signin">              
+                    <s:textfield name="username" key="label.username" cssClass="form-control " placeholder="Username" label="User"></s:textfield>				
+                    <s:password name="password" key="label.password" cssClass="form-control" placeholder="Password" label="Pass"></s:password>
+                    
+                    <s:submit type="button" method="execute" key="label.login" cssClass="btn btn-lg btn-primary btn-block" >
+					         
+						</s:submit>	
 					
-						<s:textfield name="username" key="label.username"
-							cssClass="form-control" label="User"></s:textfield>
 					
-				
-			
-				
-					
-						<s:password name="password" key="label.password"
-							cssClass="form-control" label="Pass"></s:password>
-						
-					
-				
-			
-		
-				
-					<s:submit method="execute" key="label.login"
-						cssClass="btn btn-lg btn-primary btn-block" />
-				
-			
-		</s:form>
+                </div>
 
-	</div>
-	<!-- /container -->
+                <div id="form-forgot" style="display: none">
+                    <input id="rec-email" class="input-block-level" name="Email" type="text" placeholder="Email">
+                    <button id="btnForgotCancel" class="btn btn-inverse">Cancel</button>
+                    <button id="btnForgotSend" class="btn btn-danger ladda-button zoom-out">
+                        <span class="ladda-label">Recover</span>
+                        <span class="ladda-spinner"></span>
+                        <div class="ladda-progress" style="width: 0px;"></div>
+                    </button>
+                </div>
+            </div>
+            <div id="well" class="well well-small">
+                <p style="margin: 0">Don't have an account? <strong><a href="Registro.jsp">Register now!</a></strong></p>
+            </div>
+            <p id="copyright">&copy; Company Name - <a id="btnForgot">Forgot your password?</a></p>
+           </s:form>
+        </div> <!-- /container -->
 
+        <script>
+            // Bind normal buttons
+            Ladda.bind( '.ladda-button', { timeout: 1000 } );
+        </script>
 
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-</body>
+    </body>
 </html>
-

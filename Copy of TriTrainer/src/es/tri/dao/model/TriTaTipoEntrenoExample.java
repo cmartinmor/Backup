@@ -1,6 +1,8 @@
 package es.tri.dao.model;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 public class TriTaTipoEntrenoExample {
@@ -104,6 +106,32 @@ public class TriTaTipoEntrenoExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
+            if (value == null) {
+                throw new RuntimeException("Value for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value.getTime()), property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
+            if (values == null || values.size() == 0) {
+                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
+            }
+            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
+            Iterator<Date> iter = values.iterator();
+            while (iter.hasNext()) {
+                dateList.add(new java.sql.Date(iter.next().getTime()));
+            }
+            addCriterion(condition, dateList, property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
+            if (value1 == null || value2 == null) {
+                throw new RuntimeException("Between values for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
+        }
+
         public Criteria andId_tipo_entrenoIsNull() {
             addCriterion("id_tipo_entreno is null");
             return (Criteria) this;
@@ -164,63 +192,73 @@ public class TriTaTipoEntrenoExample {
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónIsNull() {
-            addCriterion("Descripción is null");
+        public Criteria andDescripcionIsNull() {
+            addCriterion("Descripcion is null");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónIsNotNull() {
-            addCriterion("Descripción is not null");
+        public Criteria andDescripcionIsNotNull() {
+            addCriterion("Descripcion is not null");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónEqualTo(Integer value) {
-            addCriterion("Descripción =", value, "descripción");
+        public Criteria andDescripcionEqualTo(String value) {
+            addCriterion("Descripcion =", value, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónNotEqualTo(Integer value) {
-            addCriterion("Descripción <>", value, "descripción");
+        public Criteria andDescripcionNotEqualTo(String value) {
+            addCriterion("Descripcion <>", value, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónGreaterThan(Integer value) {
-            addCriterion("Descripción >", value, "descripción");
+        public Criteria andDescripcionGreaterThan(String value) {
+            addCriterion("Descripcion >", value, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónGreaterThanOrEqualTo(Integer value) {
-            addCriterion("Descripción >=", value, "descripción");
+        public Criteria andDescripcionGreaterThanOrEqualTo(String value) {
+            addCriterion("Descripcion >=", value, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónLessThan(Integer value) {
-            addCriterion("Descripción <", value, "descripción");
+        public Criteria andDescripcionLessThan(String value) {
+            addCriterion("Descripcion <", value, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónLessThanOrEqualTo(Integer value) {
-            addCriterion("Descripción <=", value, "descripción");
+        public Criteria andDescripcionLessThanOrEqualTo(String value) {
+            addCriterion("Descripcion <=", value, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónIn(List<Integer> values) {
-            addCriterion("Descripción in", values, "descripción");
+        public Criteria andDescripcionLike(String value) {
+            addCriterion("Descripcion like", value, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónNotIn(List<Integer> values) {
-            addCriterion("Descripción not in", values, "descripción");
+        public Criteria andDescripcionNotLike(String value) {
+            addCriterion("Descripcion not like", value, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónBetween(Integer value1, Integer value2) {
-            addCriterion("Descripción between", value1, value2, "descripción");
+        public Criteria andDescripcionIn(List<String> values) {
+            addCriterion("Descripcion in", values, "descripcion");
             return (Criteria) this;
         }
 
-        public Criteria andDescripciónNotBetween(Integer value1, Integer value2) {
-            addCriterion("Descripción not between", value1, value2, "descripción");
+        public Criteria andDescripcionNotIn(List<String> values) {
+            addCriterion("Descripcion not in", values, "descripcion");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescripcionBetween(String value1, String value2) {
+            addCriterion("Descripcion between", value1, value2, "descripcion");
+            return (Criteria) this;
+        }
+
+        public Criteria andDescripcionNotBetween(String value1, String value2) {
+            addCriterion("Descripcion not between", value1, value2, "descripcion");
             return (Criteria) this;
         }
 
@@ -234,53 +272,53 @@ public class TriTaTipoEntrenoExample {
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaEqualTo(Integer value) {
-            addCriterion("Fecha_baja =", value, "fecha_baja");
+        public Criteria andFecha_bajaEqualTo(Date value) {
+            addCriterionForJDBCDate("Fecha_baja =", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaNotEqualTo(Integer value) {
-            addCriterion("Fecha_baja <>", value, "fecha_baja");
+        public Criteria andFecha_bajaNotEqualTo(Date value) {
+            addCriterionForJDBCDate("Fecha_baja <>", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaGreaterThan(Integer value) {
-            addCriterion("Fecha_baja >", value, "fecha_baja");
+        public Criteria andFecha_bajaGreaterThan(Date value) {
+            addCriterionForJDBCDate("Fecha_baja >", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaGreaterThanOrEqualTo(Integer value) {
-            addCriterion("Fecha_baja >=", value, "fecha_baja");
+        public Criteria andFecha_bajaGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("Fecha_baja >=", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaLessThan(Integer value) {
-            addCriterion("Fecha_baja <", value, "fecha_baja");
+        public Criteria andFecha_bajaLessThan(Date value) {
+            addCriterionForJDBCDate("Fecha_baja <", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaLessThanOrEqualTo(Integer value) {
-            addCriterion("Fecha_baja <=", value, "fecha_baja");
+        public Criteria andFecha_bajaLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("Fecha_baja <=", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaIn(List<Integer> values) {
-            addCriterion("Fecha_baja in", values, "fecha_baja");
+        public Criteria andFecha_bajaIn(List<Date> values) {
+            addCriterionForJDBCDate("Fecha_baja in", values, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaNotIn(List<Integer> values) {
-            addCriterion("Fecha_baja not in", values, "fecha_baja");
+        public Criteria andFecha_bajaNotIn(List<Date> values) {
+            addCriterionForJDBCDate("Fecha_baja not in", values, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaBetween(Integer value1, Integer value2) {
-            addCriterion("Fecha_baja between", value1, value2, "fecha_baja");
+        public Criteria andFecha_bajaBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("Fecha_baja between", value1, value2, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaNotBetween(Integer value1, Integer value2) {
-            addCriterion("Fecha_baja not between", value1, value2, "fecha_baja");
+        public Criteria andFecha_bajaNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("Fecha_baja not between", value1, value2, "fecha_baja");
             return (Criteria) this;
         }
     }

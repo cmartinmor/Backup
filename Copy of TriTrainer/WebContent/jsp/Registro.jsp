@@ -116,7 +116,7 @@
 								cssClass="btn btn-primary btn-block btn-lg" value="Register" />
 						</div>
 						<div class="col-xs-6 col-md-6">
-							<a href="jsp/Login.jsp" class="btn btn-success btn-block btn-lg">Sign
+							<a href="Login.jsp" class="btn btn-success btn-block btn-lg">Sign
 								In</a>
 						</div>
 					</div>

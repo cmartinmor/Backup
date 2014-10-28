@@ -3,8 +3,8 @@
 <mapper namespace="es.tri.dao.TriTaTipoEntrenoMapper" >
   <resultMap id="BaseResultMap" type="es.tri.dao.model.TriTaTipoEntreno" >
     <id column="id_tipo_entreno" property="id_tipo_entreno" jdbcType="INTEGER" />
-    <result column="Descripción" property="descripción" jdbcType="INTEGER" />
-    <result column="Fecha_baja" property="fecha_baja" jdbcType="INTEGER" />
+    <result column="Descripcion" property="descripcion" jdbcType="VARCHAR" />
+    <result column="Fecha_baja" property="fecha_baja" jdbcType="DATE" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -65,7 +65,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id_tipo_entreno, Descripción, Fecha_baja
+    id_tipo_entreno, Descripcion, Fecha_baja
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="es.tri.dao.model.TriTaTipoEntrenoExample" >
     select
@@ -93,9 +93,9 @@
     where id_tipo_entreno = #{id_tipo_entreno,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="es.tri.dao.model.TriTaTipoEntreno" >
-    insert into tri_ta_tipo_entreno (id_tipo_entreno, Descripción, Fecha_baja
+    insert into tri_ta_tipo_entreno (id_tipo_entreno, Descripcion, Fecha_baja
       )
-    values (#{id_tipo_entreno,jdbcType=INTEGER}, #{descripción,jdbcType=INTEGER}, #{fecha_baja,jdbcType=INTEGER}
+    values (#{id_tipo_entreno,jdbcType=INTEGER}, #{descripcion,jdbcType=VARCHAR}, #{fecha_baja,jdbcType=DATE}
       )
   </insert>
   <insert id="insertSelective" parameterType="es.tri.dao.model.TriTaTipoEntreno" >
@@ -104,8 +104,8 @@
       <if test="id_tipo_entreno != null" >
         id_tipo_entreno,
       </if>
-      <if test="descripción != null" >
-        Descripción,
+      <if test="descripcion != null" >
+        Descripcion,
       </if>
       <if test="fecha_baja != null" >
         Fecha_baja,
@@ -115,11 +115,11 @@
       <if test="id_tipo_entreno != null" >
         #{id_tipo_entreno,jdbcType=INTEGER},
       </if>
-      <if test="descripción != null" >
-        #{descripción,jdbcType=INTEGER},
+      <if test="descripcion != null" >
+        #{descripcion,jdbcType=VARCHAR},
       </if>
       <if test="fecha_baja != null" >
-        #{fecha_baja,jdbcType=INTEGER},
+        #{fecha_baja,jdbcType=DATE},
       </if>
     </trim>
   </insert>
@@ -129,11 +129,11 @@
       <if test="record.id_tipo_entreno != null" >
         id_tipo_entreno = #{record.id_tipo_entreno,jdbcType=INTEGER},
       </if>
-      <if test="record.descripción != null" >
-        Descripción = #{record.descripción,jdbcType=INTEGER},
+      <if test="record.descripcion != null" >
+        Descripcion = #{record.descripcion,jdbcType=VARCHAR},
       </if>
       <if test="record.fecha_baja != null" >
-        Fecha_baja = #{record.fecha_baja,jdbcType=INTEGER},
+        Fecha_baja = #{record.fecha_baja,jdbcType=DATE},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -143,8 +143,8 @@
   <update id="updateByExample" parameterType="map" >
     update tri_ta_tipo_entreno
     set id_tipo_entreno = #{record.id_tipo_entreno,jdbcType=INTEGER},
-      Descripción = #{record.descripción,jdbcType=INTEGER},
-      Fecha_baja = #{record.fecha_baja,jdbcType=INTEGER}
+      Descripcion = #{record.descripcion,jdbcType=VARCHAR},
+      Fecha_baja = #{record.fecha_baja,jdbcType=DATE}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -152,19 +152,19 @@
   <update id="updateByPrimaryKeySelective" parameterType="es.tri.dao.model.TriTaTipoEntreno" >
     update tri_ta_tipo_entreno
     <set >
-      <if test="descripción != null" >
-        Descripción = #{descripción,jdbcType=INTEGER},
+      <if test="descripcion != null" >
+        Descripcion = #{descripcion,jdbcType=VARCHAR},
       </if>
       <if test="fecha_baja != null" >
-        Fecha_baja = #{fecha_baja,jdbcType=INTEGER},
+        Fecha_baja = #{fecha_baja,jdbcType=DATE},
       </if>
     </set>
     where id_tipo_entreno = #{id_tipo_entreno,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="es.tri.dao.model.TriTaTipoEntreno" >
     update tri_ta_tipo_entreno
-    set Descripción = #{descripción,jdbcType=INTEGER},
-      Fecha_baja = #{fecha_baja,jdbcType=INTEGER}
+    set Descripcion = #{descripcion,jdbcType=VARCHAR},
+      Fecha_baja = #{fecha_baja,jdbcType=DATE}
     where id_tipo_entreno = #{id_tipo_entreno,jdbcType=INTEGER}
   </update>
 </mapper>

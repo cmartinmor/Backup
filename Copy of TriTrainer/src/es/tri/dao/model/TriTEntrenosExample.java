@@ -106,6 +106,32 @@ public class TriTEntrenosExample {
             criteria.add(new Criterion(condition, value1, value2));
         }
 
+        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
+            if (value == null) {
+                throw new RuntimeException("Value for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value.getTime()), property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
+            if (values == null || values.size() == 0) {
+                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
+            }
+            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
+            Iterator<Date> iter = values.iterator();
+            while (iter.hasNext()) {
+                dateList.add(new java.sql.Date(iter.next().getTime()));
+            }
+            addCriterion(condition, dateList, property);
+        }
+
+        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
+            if (value1 == null || value2 == null) {
+                throw new RuntimeException("Between values for " + property + " cannot be null");
+            }
+            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
+        }
+
         protected void addCriterionForJDBCTime(String condition, Date value, String property) {
             if (value == null) {
                 throw new RuntimeException("Value for " + property + " cannot be null");
@@ -322,53 +348,53 @@ public class TriTEntrenosExample {
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaEqualTo(Integer value) {
-            addCriterion("fecha_baja =", value, "fecha_baja");
+        public Criteria andFecha_bajaEqualTo(Date value) {
+            addCriterionForJDBCDate("fecha_baja =", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaNotEqualTo(Integer value) {
-            addCriterion("fecha_baja <>", value, "fecha_baja");
+        public Criteria andFecha_bajaNotEqualTo(Date value) {
+            addCriterionForJDBCDate("fecha_baja <>", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaGreaterThan(Integer value) {
-            addCriterion("fecha_baja >", value, "fecha_baja");
+        public Criteria andFecha_bajaGreaterThan(Date value) {
+            addCriterionForJDBCDate("fecha_baja >", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaGreaterThanOrEqualTo(Integer value) {
-            addCriterion("fecha_baja >=", value, "fecha_baja");
+        public Criteria andFecha_bajaGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("fecha_baja >=", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaLessThan(Integer value) {
-            addCriterion("fecha_baja <", value, "fecha_baja");
+        public Criteria andFecha_bajaLessThan(Date value) {
+            addCriterionForJDBCDate("fecha_baja <", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaLessThanOrEqualTo(Integer value) {
-            addCriterion("fecha_baja <=", value, "fecha_baja");
+        public Criteria andFecha_bajaLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("fecha_baja <=", value, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaIn(List<Integer> values) {
-            addCriterion("fecha_baja in", values, "fecha_baja");
+        public Criteria andFecha_bajaIn(List<Date> values) {
+            addCriterionForJDBCDate("fecha_baja in", values, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaNotIn(List<Integer> values) {
-            addCriterion("fecha_baja not in", values, "fecha_baja");
+        public Criteria andFecha_bajaNotIn(List<Date> values) {
+            addCriterionForJDBCDate("fecha_baja not in", values, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaBetween(Integer value1, Integer value2) {
-            addCriterion("fecha_baja between", value1, value2, "fecha_baja");
+        public Criteria andFecha_bajaBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("fecha_baja between", value1, value2, "fecha_baja");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bajaNotBetween(Integer value1, Integer value2) {
-            addCriterion("fecha_baja not between", value1, value2, "fecha_baja");
+        public Criteria andFecha_bajaNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("fecha_baja not between", value1, value2, "fecha_baja");
             return (Criteria) this;
         }
 
@@ -909,6 +935,186 @@ public class TriTEntrenosExample {
 
         public Criteria andDescansoNotBetween(Integer value1, Integer value2) {
             addCriterion("descanso not between", value1, value2, "descanso");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaIsNull() {
+            addCriterion("fecha is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaIsNotNull() {
+            addCriterion("fecha is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaEqualTo(Date value) {
+            addCriterionForJDBCDate("fecha =", value, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaNotEqualTo(Date value) {
+            addCriterionForJDBCDate("fecha <>", value, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaGreaterThan(Date value) {
+            addCriterionForJDBCDate("fecha >", value, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaGreaterThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("fecha >=", value, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaLessThan(Date value) {
+            addCriterionForJDBCDate("fecha <", value, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaLessThanOrEqualTo(Date value) {
+            addCriterionForJDBCDate("fecha <=", value, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaIn(List<Date> values) {
+            addCriterionForJDBCDate("fecha in", values, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaNotIn(List<Date> values) {
+            addCriterionForJDBCDate("fecha not in", values, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("fecha between", value1, value2, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andFechaNotBetween(Date value1, Date value2) {
+            addCriterionForJDBCDate("fecha not between", value1, value2, "fecha");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaIsNull() {
+            addCriterion("DiaSemana is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaIsNotNull() {
+            addCriterion("DiaSemana is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaEqualTo(Integer value) {
+            addCriterion("DiaSemana =", value, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaNotEqualTo(Integer value) {
+            addCriterion("DiaSemana <>", value, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaGreaterThan(Integer value) {
+            addCriterion("DiaSemana >", value, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaGreaterThanOrEqualTo(Integer value) {
+            addCriterion("DiaSemana >=", value, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaLessThan(Integer value) {
+            addCriterion("DiaSemana <", value, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaLessThanOrEqualTo(Integer value) {
+            addCriterion("DiaSemana <=", value, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaIn(List<Integer> values) {
+            addCriterion("DiaSemana in", values, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaNotIn(List<Integer> values) {
+            addCriterion("DiaSemana not in", values, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaBetween(Integer value1, Integer value2) {
+            addCriterion("DiaSemana between", value1, value2, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andDiaSemanaNotBetween(Integer value1, Integer value2) {
+            addCriterion("DiaSemana not between", value1, value2, "diaSemana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaIsNull() {
+            addCriterion("Semana is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaIsNotNull() {
+            addCriterion("Semana is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaEqualTo(Integer value) {
+            addCriterion("Semana =", value, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaNotEqualTo(Integer value) {
+            addCriterion("Semana <>", value, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaGreaterThan(Integer value) {
+            addCriterion("Semana >", value, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaGreaterThanOrEqualTo(Integer value) {
+            addCriterion("Semana >=", value, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaLessThan(Integer value) {
+            addCriterion("Semana <", value, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaLessThanOrEqualTo(Integer value) {
+            addCriterion("Semana <=", value, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaIn(List<Integer> values) {
+            addCriterion("Semana in", values, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaNotIn(List<Integer> values) {
+            addCriterion("Semana not in", values, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaBetween(Integer value1, Integer value2) {
+            addCriterion("Semana between", value1, value2, "semana");
+            return (Criteria) this;
+        }
+
+        public Criteria andSemanaNotBetween(Integer value1, Integer value2) {
+            addCriterion("Semana not between", value1, value2, "semana");
             return (Criteria) this;
         }
     }

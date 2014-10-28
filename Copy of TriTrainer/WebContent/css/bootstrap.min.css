@@ -724,19 +724,23 @@ pre code {
 
 @media ( min-width :768px) {
 	.container {
-		width: 750px
+		width: 750px;
+		heigth: 80px
+		
 	}
 }
 
 @media ( min-width :992px) {
 	.container {
-		width: 970px
+		width: 970px;
+		heigth: 100px
 	}
 }
 
 @media ( min-width :1200px) {
 	.container {
-		width: 1170px
+		width: 1170px;
+		heigth: 100px
 	}
 }
 
@@ -2073,8 +2077,8 @@ textarea.input-lg,select[multiple].input-lg {
 
 .btn-primary {
 	color: #fff;
-	background-color: #428bca;
-	border-color: #357ebd
+	background-color: #0031CC;
+	border-color: #0031CC
 }
 
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active,.btn-primary.active,.open .dropdown-toggle.btn-primary
@@ -3633,7 +3637,8 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 
 .nav>li {
 	position: relative;
-	display: block
+	display: block;
+	padding-right: 150px
 }
 
 .nav>li>a {
@@ -3956,7 +3961,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 	padding: 15px;
 	font-size: 18px;
 	line-height: 20px;
-	height: 50px
+	height: 100px
 }
 
 .navbar-brand:hover,.navbar-brand:focus {
@@ -4270,7 +4275,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 }
 
 .navbar-inverse {
-	background-color: #222;
+	background-color: #000;
 	/*border-color: #080808 lo quito para eliminar el color del borde superior*/
 }
 
@@ -4301,7 +4306,7 @@ textarea.input-group-sm>.form-control,textarea.input-group-sm>.input-group-addon
 .navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>.active>a:focus
 	{
 	color: #fff;
-	background-color: #080808
+	/*background-color: #080808*/
 }
 
 .navbar-inverse .navbar-nav>.disabled>a,.navbar-inverse .navbar-nav>.disabled>a:hover,.navbar-inverse .navbar-nav>.disabled>a:focus

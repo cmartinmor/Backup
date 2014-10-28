@@ -4,8 +4,10 @@
   <resultMap id="BaseResultMap" type="es.tri.dao.model.TriTEjercicios" >
     <id column="id_ejercicio" property="id_ejercicio" jdbcType="INTEGER" />
     <result column="Descripcion" property="descripcion" jdbcType="VARCHAR" />
-    <result column="url_video" property="url_video" jdbcType="VARCHAR" />
-    <result column="fecha_baha" property="fecha_baha" jdbcType="DATE" />
+    <result column="URL_video" property="URL_video" jdbcType="VARCHAR" />
+    <result column="id_tipo" property="id_tipo" jdbcType="INTEGER" />
+    <result column="id_nivel" property="id_nivel" jdbcType="INTEGER" />
+    <result column="enSeries" property="enSeries" jdbcType="INTEGER" />
   </resultMap>
   <sql id="Example_Where_Clause" >
     <where >
@@ -66,7 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id_ejercicio, Descripcion, url_video, fecha_baha
+    id_ejercicio, Descripcion, URL_video, id_tipo, id_nivel, enSeries
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="es.tri.dao.model.TriTEjerciciosExample" >
     select
@@ -94,10 +96,12 @@
     where id_ejercicio = #{id_ejercicio,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="es.tri.dao.model.TriTEjercicios" >
-    insert into tri_t_ejercicios (id_ejercicio, Descripcion, url_video, 
-      fecha_baha)
-    values (#{id_ejercicio,jdbcType=INTEGER}, #{descripcion,jdbcType=VARCHAR}, #{url_video,jdbcType=VARCHAR}, 
-      #{fecha_baha,jdbcType=DATE})
+    insert into tri_t_ejercicios (id_ejercicio, Descripcion, URL_video, 
+      id_tipo, id_nivel, enSeries
+      )
+    values (#{id_ejercicio,jdbcType=INTEGER}, #{descripcion,jdbcType=VARCHAR}, #{URL_video,jdbcType=VARCHAR}, 
+      #{id_tipo,jdbcType=INTEGER}, #{id_nivel,jdbcType=INTEGER}, #{enSeries,jdbcType=INTEGER}
+      )
   </insert>
   <insert id="insertSelective" parameterType="es.tri.dao.model.TriTEjercicios" >
     insert into tri_t_ejercicios
@@ -108,11 +112,17 @@
       <if test="descripcion != null" >
         Descripcion,
       </if>
-      <if test="url_video != null" >
-        url_video,
+      <if test="URL_video != null" >
+        URL_video,
       </if>
-      <if test="fecha_baha != null" >
-        fecha_baha,
+      <if test="id_tipo != null" >
+        id_tipo,
+      </if>
+      <if test="id_nivel != null" >
+        id_nivel,
+      </if>
+      <if test="enSeries != null" >
+        enSeries,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
@@ -122,11 +132,17 @@
       <if test="descripcion != null" >
         #{descripcion,jdbcType=VARCHAR},
       </if>
-      <if test="url_video != null" >
-        #{url_video,jdbcType=VARCHAR},
+      <if test="URL_video != null" >
+        #{URL_video,jdbcType=VARCHAR},
       </if>
-      <if test="fecha_baha != null" >
-        #{fecha_baha,jdbcType=DATE},
+      <if test="id_tipo != null" >
+        #{id_tipo,jdbcType=INTEGER},
+      </if>
+      <if test="id_nivel != null" >
+        #{id_nivel,jdbcType=INTEGER},
+      </if>
+      <if test="enSeries != null" >
+        #{enSeries,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -139,11 +155,17 @@
       <if test="record.descripcion != null" >
         Descripcion = #{record.descripcion,jdbcType=VARCHAR},
       </if>
-      <if test="record.url_video != null" >
-        url_video = #{record.url_video,jdbcType=VARCHAR},
+      <if test="record.URL_video != null" >
+        URL_video = #{record.URL_video,jdbcType=VARCHAR},
       </if>
-      <if test="record.fecha_baha != null" >
-        fecha_baha = #{record.fecha_baha,jdbcType=DATE},
+      <if test="record.id_tipo != null" >
+        id_tipo = #{record.id_tipo,jdbcType=INTEGER},
+      </if>
+      <if test="record.id_nivel != null" >
+        id_nivel = #{record.id_nivel,jdbcType=INTEGER},
+      </if>
+      <if test="record.enSeries != null" >
+        enSeries = #{record.enSeries,jdbcType=INTEGER},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -154,8 +176,10 @@
     update tri_t_ejercicios
     set id_ejercicio = #{record.id_ejercicio,jdbcType=INTEGER},
       Descripcion = #{record.descripcion,jdbcType=VARCHAR},
-      url_video = #{record.url_video,jdbcType=VARCHAR},
-      fecha_baha = #{record.fecha_baha,jdbcType=DATE}
+      URL_video = #{record.URL_video,jdbcType=VARCHAR},
+      id_tipo = #{record.id_tipo,jdbcType=INTEGER},
+      id_nivel = #{record.id_nivel,jdbcType=INTEGER},
+      enSeries = #{record.enSeries,jdbcType=INTEGER}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -166,11 +190,17 @@
       <if test="descripcion != null" >
         Descripcion = #{descripcion,jdbcType=VARCHAR},
       </if>
-      <if test="url_video != null" >
-        url_video = #{url_video,jdbcType=VARCHAR},
+      <if test="URL_video != null" >
+        URL_video = #{URL_video,jdbcType=VARCHAR},
       </if>
-      <if test="fecha_baha != null" >
-        fecha_baha = #{fecha_baha,jdbcType=DATE},
+      <if test="id_tipo != null" >
+        id_tipo = #{id_tipo,jdbcType=INTEGER},
+      </if>
+      <if test="id_nivel != null" >
+        id_nivel = #{id_nivel,jdbcType=INTEGER},
+      </if>
+      <if test="enSeries != null" >
+        enSeries = #{enSeries,jdbcType=INTEGER},
       </if>
     </set>
     where id_ejercicio = #{id_ejercicio,jdbcType=INTEGER}
@@ -178,8 +208,10 @@
   <update id="updateByPrimaryKey" parameterType="es.tri.dao.model.TriTEjercicios" >
     update tri_t_ejercicios
     set Descripcion = #{descripcion,jdbcType=VARCHAR},
-      url_video = #{url_video,jdbcType=VARCHAR},
-      fecha_baha = #{fecha_baha,jdbcType=DATE}
+      URL_video = #{URL_video,jdbcType=VARCHAR},
+      id_tipo = #{id_tipo,jdbcType=INTEGER},
+      id_nivel = #{id_nivel,jdbcType=INTEGER},
+      enSeries = #{enSeries,jdbcType=INTEGER}
     where id_ejercicio = #{id_ejercicio,jdbcType=INTEGER}
   </update>
 </mapper>

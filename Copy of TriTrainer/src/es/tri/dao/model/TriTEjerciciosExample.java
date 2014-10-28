@@ -1,8 +1,6 @@
 package es.tri.dao.model;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 
 public class TriTEjerciciosExample {
@@ -104,32 +102,6 @@ public class TriTEjerciciosExample {
                 throw new RuntimeException("Between values for " + property + " cannot be null");
             }
             criteria.add(new Criterion(condition, value1, value2));
-        }
-
-        protected void addCriterionForJDBCDate(String condition, Date value, String property) {
-            if (value == null) {
-                throw new RuntimeException("Value for " + property + " cannot be null");
-            }
-            addCriterion(condition, new java.sql.Date(value.getTime()), property);
-        }
-
-        protected void addCriterionForJDBCDate(String condition, List<Date> values, String property) {
-            if (values == null || values.size() == 0) {
-                throw new RuntimeException("Value list for " + property + " cannot be null or empty");
-            }
-            List<java.sql.Date> dateList = new ArrayList<java.sql.Date>();
-            Iterator<Date> iter = values.iterator();
-            while (iter.hasNext()) {
-                dateList.add(new java.sql.Date(iter.next().getTime()));
-            }
-            addCriterion(condition, dateList, property);
-        }
-
-        protected void addCriterionForJDBCDate(String condition, Date value1, Date value2, String property) {
-            if (value1 == null || value2 == null) {
-                throw new RuntimeException("Between values for " + property + " cannot be null");
-            }
-            addCriterion(condition, new java.sql.Date(value1.getTime()), new java.sql.Date(value2.getTime()), property);
         }
 
         public Criteria andId_ejercicioIsNull() {
@@ -262,133 +234,253 @@ public class TriTEjerciciosExample {
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoIsNull() {
-            addCriterion("url_video is null");
+        public Criteria andURL_videoIsNull() {
+            addCriterion("URL_video is null");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoIsNotNull() {
-            addCriterion("url_video is not null");
+        public Criteria andURL_videoIsNotNull() {
+            addCriterion("URL_video is not null");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoEqualTo(String value) {
-            addCriterion("url_video =", value, "url_video");
+        public Criteria andURL_videoEqualTo(String value) {
+            addCriterion("URL_video =", value, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoNotEqualTo(String value) {
-            addCriterion("url_video <>", value, "url_video");
+        public Criteria andURL_videoNotEqualTo(String value) {
+            addCriterion("URL_video <>", value, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoGreaterThan(String value) {
-            addCriterion("url_video >", value, "url_video");
+        public Criteria andURL_videoGreaterThan(String value) {
+            addCriterion("URL_video >", value, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoGreaterThanOrEqualTo(String value) {
-            addCriterion("url_video >=", value, "url_video");
+        public Criteria andURL_videoGreaterThanOrEqualTo(String value) {
+            addCriterion("URL_video >=", value, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoLessThan(String value) {
-            addCriterion("url_video <", value, "url_video");
+        public Criteria andURL_videoLessThan(String value) {
+            addCriterion("URL_video <", value, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoLessThanOrEqualTo(String value) {
-            addCriterion("url_video <=", value, "url_video");
+        public Criteria andURL_videoLessThanOrEqualTo(String value) {
+            addCriterion("URL_video <=", value, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoLike(String value) {
-            addCriterion("url_video like", value, "url_video");
+        public Criteria andURL_videoLike(String value) {
+            addCriterion("URL_video like", value, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoNotLike(String value) {
-            addCriterion("url_video not like", value, "url_video");
+        public Criteria andURL_videoNotLike(String value) {
+            addCriterion("URL_video not like", value, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoIn(List<String> values) {
-            addCriterion("url_video in", values, "url_video");
+        public Criteria andURL_videoIn(List<String> values) {
+            addCriterion("URL_video in", values, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoNotIn(List<String> values) {
-            addCriterion("url_video not in", values, "url_video");
+        public Criteria andURL_videoNotIn(List<String> values) {
+            addCriterion("URL_video not in", values, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoBetween(String value1, String value2) {
-            addCriterion("url_video between", value1, value2, "url_video");
+        public Criteria andURL_videoBetween(String value1, String value2) {
+            addCriterion("URL_video between", value1, value2, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andUrl_videoNotBetween(String value1, String value2) {
-            addCriterion("url_video not between", value1, value2, "url_video");
+        public Criteria andURL_videoNotBetween(String value1, String value2) {
+            addCriterion("URL_video not between", value1, value2, "URL_video");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaIsNull() {
-            addCriterion("fecha_baha is null");
+        public Criteria andId_tipoIsNull() {
+            addCriterion("id_tipo is null");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaIsNotNull() {
-            addCriterion("fecha_baha is not null");
+        public Criteria andId_tipoIsNotNull() {
+            addCriterion("id_tipo is not null");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaEqualTo(Date value) {
-            addCriterionForJDBCDate("fecha_baha =", value, "fecha_baha");
+        public Criteria andId_tipoEqualTo(Integer value) {
+            addCriterion("id_tipo =", value, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaNotEqualTo(Date value) {
-            addCriterionForJDBCDate("fecha_baha <>", value, "fecha_baha");
+        public Criteria andId_tipoNotEqualTo(Integer value) {
+            addCriterion("id_tipo <>", value, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaGreaterThan(Date value) {
-            addCriterionForJDBCDate("fecha_baha >", value, "fecha_baha");
+        public Criteria andId_tipoGreaterThan(Integer value) {
+            addCriterion("id_tipo >", value, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaGreaterThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("fecha_baha >=", value, "fecha_baha");
+        public Criteria andId_tipoGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id_tipo >=", value, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaLessThan(Date value) {
-            addCriterionForJDBCDate("fecha_baha <", value, "fecha_baha");
+        public Criteria andId_tipoLessThan(Integer value) {
+            addCriterion("id_tipo <", value, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaLessThanOrEqualTo(Date value) {
-            addCriterionForJDBCDate("fecha_baha <=", value, "fecha_baha");
+        public Criteria andId_tipoLessThanOrEqualTo(Integer value) {
+            addCriterion("id_tipo <=", value, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaIn(List<Date> values) {
-            addCriterionForJDBCDate("fecha_baha in", values, "fecha_baha");
+        public Criteria andId_tipoIn(List<Integer> values) {
+            addCriterion("id_tipo in", values, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaNotIn(List<Date> values) {
-            addCriterionForJDBCDate("fecha_baha not in", values, "fecha_baha");
+        public Criteria andId_tipoNotIn(List<Integer> values) {
+            addCriterion("id_tipo not in", values, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("fecha_baha between", value1, value2, "fecha_baha");
+        public Criteria andId_tipoBetween(Integer value1, Integer value2) {
+            addCriterion("id_tipo between", value1, value2, "id_tipo");
             return (Criteria) this;
         }
 
-        public Criteria andFecha_bahaNotBetween(Date value1, Date value2) {
-            addCriterionForJDBCDate("fecha_baha not between", value1, value2, "fecha_baha");
+        public Criteria andId_tipoNotBetween(Integer value1, Integer value2) {
+            addCriterion("id_tipo not between", value1, value2, "id_tipo");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelIsNull() {
+            addCriterion("id_nivel is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelIsNotNull() {
+            addCriterion("id_nivel is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelEqualTo(Integer value) {
+            addCriterion("id_nivel =", value, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelNotEqualTo(Integer value) {
+            addCriterion("id_nivel <>", value, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelGreaterThan(Integer value) {
+            addCriterion("id_nivel >", value, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelGreaterThanOrEqualTo(Integer value) {
+            addCriterion("id_nivel >=", value, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelLessThan(Integer value) {
+            addCriterion("id_nivel <", value, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelLessThanOrEqualTo(Integer value) {
+            addCriterion("id_nivel <=", value, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelIn(List<Integer> values) {
+            addCriterion("id_nivel in", values, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelNotIn(List<Integer> values) {
+            addCriterion("id_nivel not in", values, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelBetween(Integer value1, Integer value2) {
+            addCriterion("id_nivel between", value1, value2, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andId_nivelNotBetween(Integer value1, Integer value2) {
+            addCriterion("id_nivel not between", value1, value2, "id_nivel");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesIsNull() {
+            addCriterion("enSeries is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesIsNotNull() {
+            addCriterion("enSeries is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesEqualTo(Integer value) {
+            addCriterion("enSeries =", value, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesNotEqualTo(Integer value) {
+            addCriterion("enSeries <>", value, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesGreaterThan(Integer value) {
+            addCriterion("enSeries >", value, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesGreaterThanOrEqualTo(Integer value) {
+            addCriterion("enSeries >=", value, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesLessThan(Integer value) {
+            addCriterion("enSeries <", value, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesLessThanOrEqualTo(Integer value) {
+            addCriterion("enSeries <=", value, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesIn(List<Integer> values) {
+            addCriterion("enSeries in", values, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesNotIn(List<Integer> values) {
+            addCriterion("enSeries not in", values, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesBetween(Integer value1, Integer value2) {
+            addCriterion("enSeries between", value1, value2, "enSeries");
+            return (Criteria) this;
+        }
+
+        public Criteria andEnSeriesNotBetween(Integer value1, Integer value2) {
+            addCriterion("enSeries not between", value1, value2, "enSeries");
             return (Criteria) this;
         }
     }

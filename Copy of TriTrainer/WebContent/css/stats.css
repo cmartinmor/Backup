@@ -3070,7 +3070,7 @@ input[type="button"].btn-block {
 /* line 150, /home/andrei/core-admin-release/core-admin/source/stylesheets/bootstrap/_navbar.scss */
 .navbar-brand {
   float: left;
-  padding: 15px 15px;
+  padding: 1px 1px;
   font-size: 18px;
   line-height: 20px; }
   /* line 156, /home/andrei/core-admin-release/core-admin/source/stylesheets/bootstrap/_navbar.scss */

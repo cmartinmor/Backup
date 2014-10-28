@@ -13,6 +13,16 @@
         </environment>
     </environments>
     <mappers>
+          
         <mapper resource="es/tri/dao/sqlmap/TriTUsuariosMapper.xml"/>
+        <mapper resource="es/tri/dao/sqlmap/TriTiEntrenoUsuarioMapper.xml"/>
+        <mapper resource="es/tri/dao/sqlmap/TriTEntrenosMapper.xml"/>
+        <mapper resource="es/tri/dao/sqlmap/TriTEjerciciosMapper.xml"/>
+        <mapper resource="es/tri/dao/sqlmap/TriTBioUsuarioMapper.xml"/>
+        <mapper resource="es/tri/dao/sqlmap/TriTaTipoUsuarioMapper.xml"/>
+        <mapper resource="es/tri/dao/sqlmap/TriTaTipoEntrenoMapper.xml"/>
+        <mapper resource="es/tri/dao/sqlmap/TriTaNivelesUsuMapper.xml"/>
+        <mapper resource="es/tri/dao/sqlmap/TriTTipoEjercicioMapper.xml"/>
+      
     </mappers>
 </configuration>
