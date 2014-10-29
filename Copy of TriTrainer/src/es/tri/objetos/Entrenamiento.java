@@ -228,10 +228,9 @@ public class Entrenamiento {
 			List<Entrenamiento> entrenamiento = new ArrayList<Entrenamiento> ();
 			Entrenamiento entrenamientoAux;
 			TriTEjercicios triTEjercicios;
+			SqlSessionFactory sqlMapper = MyBatisConnectionFactory
+					.getSqlSessionFactory();
 			for (TriTEntrenos lista : entreno){
-				
-				SqlSessionFactory sqlMapper = MyBatisConnectionFactory
-						.getSqlSessionFactory();
 				SqlSession sqlSession = sqlMapper.openSession();
 				
 				try {

@@ -60,7 +60,8 @@
 						class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/TriTrainer"><img src="../images/iconoLogoPeq.png">TriTrainer</a>
+				<a class="navbar-brand" href="/TriTrainer"><img
+					src="../images/iconoLogoPeq.png">TriTrainer</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
@@ -68,7 +69,8 @@
 
 				<ul class="nav navbar-nav navbar-right navbar-user">
 
-					<li><a href="newPlan.jsp"><i class="fa fa-youtube-play"></i> New Plan </a></li>
+					<li><a href="newPlan.jsp"><i class="fa fa-youtube-play"></i>
+							New Plan </a></li>
 					<li class="dropdown user-dropdown"><a href="#"
 						class="dropdown-toggle" data-toggle="dropdown"><i
 							class="fa fa-user"></i> John Smith <b class="caret"></b></a>
@@ -117,25 +119,37 @@
 						</a>
 						<div class="panel-heading">
 							<div class="row">
-								<div class="col-xs-6">
-									<i class="fa fa-comments fa-5x"></i>
-								</div>
+<!-- 								<div class="col-xs-6"> -->
+<!-- 									<i class="fa fa-comments fa-5x"></i> -->
+<!-- 								</div> -->
 								<div class="col-xs-6 text-right">
 									<p class="announcement-heading"></p>
 									<p class="announcement-text">
-<%-- 										<td width="35%"><s:property value="triTUsuarios.Password" /></td> --%>
-										<!--<td width="35%"><s:property value="UnicoentrenoAyer.Id_ejercicio" /></td>
-										 prueba  Generar getters and setters para poder llamarlos desde el jsp-->
-									 	<ul>
-										<s:iterator value="entrenamientoAyer"> 
-										    <!-- The following expression is equal: -->
-										    <li><s:property value="descripcion"/></li>
-										</s:iterator>
-										</ul>
-										 
 										
-										
-									</p>
+									
+									<table class="table table-striped">
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>Description</th>
+												<th>Series</th>
+												<th>Distance</th>
+											</tr>
+										</thead>
+										<tbody>
+										<s:iterator value="entrenamientoAyer">
+											<tr>
+												<td>1</td>
+												<td><s:property value="descripcion"/></td>
+												<td>Balboa</td>
+												<td>rockybalboa@mail.com</td>
+											</tr>
+										</s:iterator>	
+										</tbody>
+									</table>
+
+
+									
 
 								</div>
 							</div>
@@ -161,16 +175,16 @@
 									<i class="fa fa-check fa-5x"></i>
 								</div>
 								<div class="col-xs-6 text-right">
-<!-- 									<p class="announcement-heading">12</p> -->
+									<!-- 									<p class="announcement-heading">12</p> -->
 									<p class="announcement-text">
-<%-- 										<td width="35%"><s:property value="triTUsuarios.usuario" /> --%>
-										 <ul>
-										<s:iterator value="triTEntrenosList">
-										   
-										    <!-- The following expression is equal: -->
-										    <li><s:property value="Id_ejercicio"/></li>
+										<%-- 										<td width="35%"><s:property value="triTUsuarios.usuario" /> --%>
+									<ul>
+										<s:iterator value="entrenamientoHoy">
+
+											<!-- The following expression is equal: -->
+											<li><s:property value="Id_ejercicio" /></li>
 										</s:iterator>
-										</ul>
+									</ul>
 									</p>
 								</div>
 							</div>
@@ -196,15 +210,15 @@
 									<i class="fa fa-tasks fa-5x"></i>
 								</div>
 								<div class="col-xs-6 text-right">
-<!-- 									<p class="announcement-heading">18</p> -->
+									<!-- 									<p class="announcement-heading">18</p> -->
 									<p class="announcement-text">
-<%-- 										<td width="35%"><s:property value="triTUsuarios.usuario" /> --%>										
-										<ul>
-										<s:iterator value="entrenoMayana"> 
-										    <!-- The following expression is equal: -->
-										    <li><s:property value="Id_ejercicio"/></li>
+										<%-- 										<td width="35%"><s:property value="triTUsuarios.usuario" /> --%>
+									<ul>
+										<s:iterator value="entrenoMayana">
+											<!-- The following expression is equal: -->
+											<li><s:property value="Id_ejercicio" /></li>
 										</s:iterator>
-										</ul>
+									</ul>
 									</p>
 								</div>
 							</div>
@@ -343,7 +357,7 @@
 						<div class="panel panel-primary">
 							<div class="panel-heading">
 								<h3 class="panel-title">
-									<i class="fa fa-money"></i> Recent Transactions
+									<i class="fa fa-money"></i> Recent Results Test
 								</h3>
 							</div>
 							<div class="panel-body">
@@ -425,13 +439,9 @@
 			<s:set var="varDet" value="prueba" />
 
 		</div>
-		<!-- /#wrapper -->
 
-		<!-- JavaScript -->
 
 		<script src="../js/bootstrap.js"></script>
-
-		<!-- Page Specific Plugins -->
 		<script src="../js/raphael-min.js"></script>
 		<script src="http://cdn.oesmith.co.uk/morris-0.4.3.min.js"></script>
 
@@ -450,6 +460,7 @@
 				label : 'Swiming',
 				value : swim
 			} ];
+
 			//var prueba2=varDet;
 			Morris.Donut({
 				element : 'morris-chart-donut',

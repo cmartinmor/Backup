@@ -44,8 +44,9 @@ public class LoginAction extends ActionSupport {
 	private String porcentageR = "20";
 	private String porcentageS = "30";
 	private String porcentageC = "50";
+	
 	private Calendar fecha = Calendar.getInstance();
-	private List<TriTEntrenos>  entrenoAyer, entrenoMayana;
+	private List<TriTEntrenos>  entrenoAyer, entrenoMayana,entrenoHoy;
 	private TriTEntrenos UnicoentrenoAyer;
 	private List <Entrenamiento> entrenamientoAyer, entrenamientoHoy, entrenamientoMayana;
 	
@@ -59,6 +60,7 @@ public class LoginAction extends ActionSupport {
 		SqlSessionFactory sqlMapper = MyBatisConnectionFactory
 				.getSqlSessionFactory();
 		SqlSession sqlSession = sqlMapper.openSession();
+		List<String> porcentages = new ArrayList();
 		try {
 
 			TriTUsuariosMapper mapper = sqlSession
@@ -78,11 +80,16 @@ public class LoginAction extends ActionSupport {
 					TriTiEntrenoUsuarioMapper mapperEntreno = sqlSession.getMapper(TriTiEntrenoUsuarioMapper.class);
 					triTUsuarioEntreno = mapperEntreno.selectByExample(entrenoUsuarioExample).get(0);
 					
-					fecha.setTime(Calendar.getInstance().getTime());
 					TriTEntrenosExample	entrenosExample	= new TriTEntrenosExample();
-					entrenosExample.createCriteria().andId_entrenoEqualTo(triTUsuarioEntreno.getId_entreno()).andFechaEqualTo(fecha.getTime());
+					entrenosExample.createCriteria().andId_entrenoEqualTo(triTUsuarioEntreno.getId_entreno());
 					TriTEntrenosMapper entrenosMapper = sqlSession.getMapper(TriTEntrenosMapper.class);
-					triTEntrenosList = entrenosMapper.selectByExample(entrenosExample);		
+					triTEntrenosList = entrenosMapper.selectByExample(entrenosExample);	
+					
+					fecha.setTime(Calendar.getInstance().getTime());
+					entrenosExample	= new TriTEntrenosExample();
+					entrenosExample.createCriteria().andId_entrenoEqualTo(triTUsuarioEntreno.getId_entreno()).andFechaEqualTo(fecha.getTime());
+					entrenosMapper = sqlSession.getMapper(TriTEntrenosMapper.class);
+					entrenoHoy = entrenosMapper.selectByExample(entrenosExample);		
 					
 					fecha.add(Calendar.DATE,-1);
 					entrenosExample	= new TriTEntrenosExample();
@@ -94,10 +101,16 @@ public class LoginAction extends ActionSupport {
 					entrenosExample	= new TriTEntrenosExample();
 					entrenosExample.createCriteria().andId_entrenoEqualTo(triTUsuarioEntreno.getId_entreno()).andFechaEqualTo(fecha.getTime());
 					entrenosMapper = sqlSession.getMapper(TriTEntrenosMapper.class);
-					entrenoMayana = entrenosMapper.selectByExample(entrenosExample);	
+					entrenoMayana = entrenosMapper.selectByExample(entrenosExample);
+					
+			
 					entrenamientoAyer = Entrenamiento.setEntrenamiento(entrenoAyer);
-					entrenamientoHoy  = Entrenamiento.setEntrenamiento(triTEntrenosList);
+					entrenamientoHoy  = Entrenamiento.setEntrenamiento(entrenoHoy);
 					entrenamientoMayana  = Entrenamiento.setEntrenamiento(entrenoMayana);
+					porcentages= FuncionesComunesService.obternerPorcentages(triTEntrenosList);
+					porcentageS= porcentages.get(0);
+					porcentageC= porcentages.get(1);
+					porcentageR= porcentages.get(2);
 					
 					return "success";
 				} else {
